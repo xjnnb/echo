@@ -1,7 +1,13 @@
 
 $(document).ready(function(){
+    $("#searchBt").click(function(){
+
+        var id=$("#searchText").val();
+        var seltype=$("#seltype").val();
         console.log("debug");
-        $.post("../common/main.php",{ },function (data) {
+        console.log(id);
+        console.log(seltype);
+        $.post("../common/search.php",{"searchText":id,"seltype":seltype},function (data) {
             var html="";
             console.log(data);
             console.log((data.length));
@@ -18,11 +24,11 @@ $(document).ready(function(){
                     "                                                            </label>\n" +
                     "                                                        </div>\n" +
                     "                                                    </td>";
-                html+="<td>"+json[i].real_name+"</td>"
-                    +"<td>"+json[i].card_no+"</td>"
-                    +"<td>"+json[i].enter_year+"</td>"
-                    +"<td>"+json[i].class_id+"</td>"
-                    +"<td>"+json[i].mobile+"</td>";
+                html+="<td>"+json[i].statue+"</td>"
+                    +"<td>"+json[i].name+"</td>"
+                    +"<td>"+json[i].id+"</td>"
+                    +"<td>"+json[i].dept+"</td>"
+                    +"<td>"+json[i].team+"</td>";
                 html+='<td>\n' +
                     '                                                        <div class="form-button-action">\n' +
                     '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary" data-original-title="Edit Task">\n' +
@@ -39,3 +45,4 @@ $(document).ready(function(){
             $("#selectInfoTable").html(html);
         });
     });
+});

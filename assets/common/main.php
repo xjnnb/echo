@@ -11,7 +11,7 @@ if($Text==null&&$type !="allSearch"){
 
 header('Content-Type: text/html;charset=utf-8');
 
-$db=@new mysqli("localhost","root","123456");
+$db=@new mysqli("localhost","root","");
 if ($db->connect_error)
     die('链接错误: '. $db->connect_error);
 $db->select_db('lab') or die('不能连接数据库');
@@ -26,7 +26,7 @@ $len=mb_strlen($Text,'utf-8');
 for($i=0;$i<$len;$i++){
     $cha=mb_substr($Text,$i,1,'utf-8');
     if($i<$len-1)
-    $tep=$tep.$cha.'%';
+        $tep=$tep.$cha.'%';
     else $tep=$tep.$cha;
 
 }
@@ -118,7 +118,7 @@ if($type=='allSearch'){
         array_push($arr,$row);
     }
 }
-    $brr= array();
+$brr= array();
 for($i=0; $i<count($arr);$i++){
     $statue=substr($arr[$i][1],0,1);
 //    echo $arr[$i][3];
@@ -137,5 +137,5 @@ for($i=0; $i<count($arr);$i++){
     }
 }
 
-    echo json_encode($brr);//输出json数据
+echo json_encode($brr);//输出json数据
 ?>

@@ -1,0 +1,13 @@
+.sidebar{
+    margin-top: 51px;
+}
+.form-check{
+    padding: 0px;
+    margin: 0px;
+}
+#searchText{
+    float: right;
+}
+.footer {
+    text-align: center;
+}

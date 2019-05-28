@@ -7,17 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <link rel="icon" href="../../favicon.ico">
 
     <title>实验室信息管理系统</title>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="../css/ready.css">
     <link rel="stylesheet" href="../css/demo.css">
     <![endif]-->
-    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/search.css" type="text/css">
 </head>
 
 <body>
@@ -79,7 +78,7 @@
                     </div>
                 </div>
                 <ul class="nav nav-sidebar">
-                    <li><a href="">首页</a></li>
+                    <li><a href="../common/main.html">首页</a></li>
                     <li><a href="">新增</a></li>
                     <li><a href="../common/search.html">查询</a></li>
 
@@ -96,7 +95,27 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-sub">
-                                            首页 > <code class="highlighter-rouge">信息列表</code>
+                                            Add <code class="highlighter-rouge">.table-striped</code> to rows the striped table
+                                        </div>
+                                        <div class="form-group from-show-notify row">
+                                            <div class="col-lg-1 col-md-1 col-sm-4 text-right">
+                                                <label>State</label>
+                                            </div>
+                                            <div class="col-lg-5 col-md-6 col-sm-4">
+                                                <select class="form-control input-fixed" id="seltype">
+                                                    <option value ="allSearch">全部</option>
+                                                    <option value ="id">学工号</option>
+                                                    <option value ="name">姓名</option>
+                                                    <option value="team">团队</option>
+                                                    <option value="dept">系别</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-4 col-md-5 col-sm-4 text-right">
+                                                <input type="text" placeholder="Search ..." class="form-control text-right" id="searchText">
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-4">
+                                                <button type="button"  class="btn btn-primary" id="searchBt">Go</button>
+                                            </div>
                                         </div>
                                         <table class="table table-striped mt-3">
                                             <thead>
@@ -109,11 +128,11 @@
                                                         </label>
                                                     </div>
                                                 </th>
+                                                <th scope="col">身份</th>
                                                 <th scope="col">姓名</th>
-                                                <th scope="col">身份证号</th>
-                                                <th scope="col">入学年月</th>
-                                                <th scope="col">班级</th>
-                                                <th scope="col">手机</th>
+                                                <th scope="col">学号</th>
+                                                <th scope="col">系别</th>
+                                                <th scope="col">团队</th>
                                                 <th scope="col">操作</th>
                                             </tr>
                                             </thead>
@@ -265,7 +284,7 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="../js/ready.min.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
 
 </body>
 

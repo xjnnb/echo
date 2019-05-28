@@ -25,7 +25,8 @@
                     type:"POST",
                     data:{
                         "user":$("#user").val(),
-                        "password":$("#password").val()
+						"password":$("#password").val(),
+						"select":$('input[type=radio][name=optionsRadios]:checked').val()
                     },
 
                     dataType:"json",
@@ -60,6 +61,16 @@
 				<h5 id="uesrResult"></h5>
 				<input type="password" class="password" id="password" placeholder="Password" name="password">
 				<h5 id="pwdResult"></h5>
+				<div class="form-check" id="selectSex">
+					<label class="form-radio-label">
+						<input class="form-radio-input" type="radio" name="optionsRadios" value="admin"  checked="" id="selectMale">
+						<span class="form-radio-sign">学生</span>
+					</label>
+					<label class="form-radio-label ml-3">
+						<input class="form-radio-input" type="radio" name="optionsRadios" value="student" id="selectFemale">
+						<span class="form-radio-sign">管理员</span>
+					</label>
+				</div>
 				<h4 id="logResult"></h4>
 				<input type="button" class="button"  id="button" value="Sign in">
 

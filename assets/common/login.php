@@ -2,6 +2,7 @@
 
     $user = $_POST["user"];
     $pwd = $_POST["password"];
+    $select = $_POST["select"];
 
     if($user==null||$pwd==null){
         header("location:../../index.html");//直接打开该php文件，跳转到登录界面
@@ -14,35 +15,25 @@
         die('链接错误: '. $db->connect_error);
     $db->select_db('lab') or die('不能连接数据库');
 
+    if ($select == "admin"){//在管理员的表中查找用户
+        $sql="SELECT * FROM admins  WHERE admin_name='".$user."' AND admin_pwd='".$pwd."';";
 
-    //在学生的表中查找用户
-    $sql="SELECT * FROM stu  WHERE stu_id='".$user."' AND password='".$pwd."';";
+        $result=$db->query($sql);
+        $num_users=$result->num_rows;//在数据库中搜索到符合的用户
+        if($num_users!=0){
+            $flag=1;
+        }
+    }
+    elseif ($select == "student"){ //在学生的表中查找用户
+        $sql="SELECT * FROM students  WHERE user_name='".$user."' AND user_pwd='".$pwd."';";
 
-    $result=$db->query($sql);
-    $num_users=$result->num_rows;//在数据库中搜索到符合的用户
-    if($num_users!=0){
-        $flag=1;
+        $result=$db->query($sql);
+        $num_users=$result->num_rows;//在数据库中搜索到符合的用户
+        if($num_users!=0){
+            $flag=2;
+        }
     }
-     //在老师的表中查找用户
-    $sql="SELECT * FROM teacher  WHERE teacher_id='".$user."' AND password='".$pwd."';";
 
-    $result=$db->query($sql);
-    $num_users=$result->num_rows;//在数据库中搜索到符合的用户
-    if($num_users!=0){
-        $flag=2;
-    }
-     //在管理员的表中查找用户
-    $sql="SELECT * FROM admin  WHERE admin_id='".$user."' AND password='".$pwd."';";
-//$rs = mysql_query($sql);
-//$arr = array();
-//while($rows = mysql_fetch_array($rs)){
-//    array_push($arr,$rows);
-//}
-    $result=$db->query($sql);
-    $num_users=$result->num_rows;//在数据库中搜索到符合的用户
-    if($num_users!=0){
-        $flag=3;
-    }
 //    组装json
     $data=[
         'flag'=>$flag

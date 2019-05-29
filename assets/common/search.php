@@ -9,15 +9,13 @@ if($Text==null&&$type !="allSearch"){
 }
 
 
-$db=@new mysqli("localhost","root","");
+$db=@new mysqli("localhost","root","123456");
 if ($db->connect_error)
     die('链接错误: '. $db->connect_error);
-$db->select_db('lab') or die('不能连接数据库');
+$db->select_db('alumni') or die('不能连接数据库');
 mysqli_query($db, "set names 'utf8'");//设置数据库utf8编码
 
-
 $arr = array();
-
 
 $tep="";
 $len=mb_strlen($Text,'utf-8');
@@ -130,7 +128,8 @@ for($i=0; $i<count($arr);$i++){
 
     if($statue=='T'){
         $brr[]=array("statue"=>"老师","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][4],"team"=>$arr[$i]["team_name"]);
-    }else{
+    }
+    else{
         $brr[]=array("statue"=>"学生","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][5],"team"=>$arr[$i]["team_name"]);
     }
 }

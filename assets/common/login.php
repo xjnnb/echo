@@ -9,7 +9,7 @@
     }
 
     header('Content-Type: text/html;charset=utf-8');
-    $db=@new mysqli("localhost","root","");
+    $db=@new mysqli("localhost","root","123456");
     $flag=0;
     if ($db->connect_error)
         die('链接错误: '. $db->connect_error);
@@ -35,11 +35,10 @@
     }
 
 //    组装json
-    $data=[
-        'flag'=>$flag
-    ];
+ $data=[
+     'flag'=>$flag
+ ];
 //返回json数据
-
-    echo json_encode($data);//输出json数据
+ echo json_encode($data);//输出json数据
 sleep(0.5);
     ?>

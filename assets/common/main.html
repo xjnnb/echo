@@ -7,13 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <link rel="icon" href="../../favicon.ico">
-
     <title>实验室信息管理系统</title>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="../css/ready.css">
     <link rel="stylesheet" href="../css/demo.css">
     <![endif]-->
@@ -47,7 +43,7 @@
             <ul class="nav nav-sidebar">
                 <div class="user">
                     <div class="photo">
-                        <img src="../img/profile.jpg">
+                        <img src="../images/profile.jpg">
                     </div>
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -79,9 +75,10 @@
                     </div>
                 </div>
                 <ul class="nav nav-sidebar">
-                    <li><a href="">首页</a></li>
+                    <li><a href="../common/main.html">首页</a></li>
                     <li><a href="../common/addNew.html">新增</a></li>
                     <li><a href="../common/search.html">查询</a></li>
+                    <li><a href="../../index.html">退出</a></li>
                 </ul>
             </ul>
 
@@ -94,9 +91,10 @@
                             <form action="" method="post">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="card-sub">
-                                            首页 > <code class="highlighter-rouge">信息列表</code>
-                                        </div>
+                                        <ul class="breadcrumb">
+                                            <li><a href="../common/main.html">首页</a></li>
+                                            <li class="active">信息列表</li>
+                                        </ul>
                                         <table class="table table-striped mt-3">
                                             <thead>
                                             <tr>
@@ -217,7 +215,7 @@
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    <div class="copyright">2019,copyright Wengdf Yusk Xujn</div>
+                    <div class="copyright">2019,copyright</div>
                     <!--                        <nav class="pull-right">-->
                     <!--                            <ul class="nav">-->
                     <!--                                <a href="#">-->
@@ -257,10 +255,8 @@
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
-
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+>
 <script src="../js/jquery.3.2.1.min.js"></script>
-<!--    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="../js/ready.min.js"></script>

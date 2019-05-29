@@ -9,11 +9,11 @@
     }
 
     header('Content-Type: text/html;charset=utf-8');
-    $db=@new mysqli("localhost","root","123456");
+    $db=@new mysqli("localhost","root","");
     $flag=0;
     if ($db->connect_error)
         die('链接错误: '. $db->connect_error);
-    $db->select_db('alumni') or die('不能连接数据库');
+    $db->select_db('test') or die('不能连接数据库');
 
     if ($select == "admin"){//在管理员的表中查找用户
         $sql="SELECT * FROM admins  WHERE admin_name='".$user."' AND admin_pwd='".$pwd."';";

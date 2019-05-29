@@ -4,16 +4,16 @@ $(document).ready(function(){
 
         var id=$("#searchText").val();
         var seltype=$("#seltype").val();
-        console.log("debug");
-        console.log(id);
-        console.log(seltype);
+        //console.log("debug");
+        //console.log(id);
+        //console.log(seltype);
         $.post("../common/search.php",{"searchText":id,"seltype":seltype},function (data) {
             var html="";
-            console.log(data);
-            console.log((data.length));
+            //console.log(data);
+            //console.log((data.length));
             var json = JSON.parse(data);
-            console.log(json.length);
-            console.log(json);
+            //console.log(json.length);
+            //console.log(json);
             for(var i = 0 ; i<json.length;i++){
                 html+='<tr>';
                 html+="              <td>\n" +
@@ -41,7 +41,6 @@ $(document).ready(function(){
                     '                                                    </td>';
                 html+='</tr>';
             }
-
             $("#selectInfoTable").html(html);
         });
     });

@@ -15,9 +15,12 @@ $address=$_POST["address"];
 $zipcode=$_POST["zipcode"];
 $enter_year=$_POST["enter_year"];
 
+$fileurl="nosource";
+$fileurl=$_POST["fileurl"];
+
 $password=$_POST["password"];
 $notify_state=$_POST["notify_state"];
-
+$notify_state=substr($enter_year, 2, 2).$notify_state;
 
 $db=@new mysqli("localhost","root","");
 
@@ -36,10 +39,9 @@ $rs =mysqli_query($db,$sql);
 if(mysqli_num_rows($rs)>0)$flag='1';
 
 
-$s1="nosource";
 $s2=1;
 if($flag=='0'){
-    $sql = "insert into students values  (".$id.",'".$user_name."','".$password."','".$real_name."','".$card_no."','".$business."','".$enter_year."',".$notify_state.",'".$mobilb."','".$address."','".$zipcode."','".$s1."',".$s2.");";
+    $sql = "insert into students values  (".$id.",'".$user_name."','".$password."','".$real_name."','".$card_no."','".$business."','".$enter_year."',".$notify_state.",'".$mobilb."','".$address."','".$zipcode."','".$fileurl."',".$s2.");";
 
         $rs =mysqli_query($db,$sql);
 

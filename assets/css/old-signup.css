@@ -17,7 +17,7 @@ a{
     color: royalblue;
 }
 body{
-    background: url(../img/bigBG.png);
+    background: url(../images/bigBG.png);
     background-size: cover;
     position:absolute;
     left:0px;

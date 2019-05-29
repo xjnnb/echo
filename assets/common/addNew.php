@@ -49,5 +49,4 @@ $arr[] = array("result" => $flag);
 echo json_encode($arr);
 
 
-
 ?>

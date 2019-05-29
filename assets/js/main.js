@@ -3,8 +3,8 @@ $(document).ready(function(){
         console.log("debug");
         $.post("../common/main.php",{ },function (data) {
             var html="";
-            console.log(data);
-            console.log((data.length));
+            //console.log(data);
+            //console.log((data.length));
             var json = JSON.parse(data);
             console.log(json.length);
             console.log(json);

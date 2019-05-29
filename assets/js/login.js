@@ -1,9 +1,3 @@
-/*
-Author:Xu Jianan
-BuildDate:2019-04-24
-Version:1.0
-Function:lab-7 Login JS Powered By JQuery
-*/
 //对键盘事件作出响应
 $(document).keydown(function (event) {
     //单击回车键登陆检查

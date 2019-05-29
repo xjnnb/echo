@@ -37,24 +37,22 @@ $dept=$_POST['dept'];
             switch ($grade) {
                 case '2015':
                     $grade = '大四';
-//                    break;
+                    break;
                 case '2016':
                     $grade = '大三';
-//                    break;
+                    break;
                 case '2017':
                     $grade = '大二';
-//                    break;
+                    break;
                 default:
                     $grade = '大一';
             }
         $sql = "insert into stu values  ('".$name."','".$id."','".$sex."','".$team."','".$grade."','".$dept."','".$introduce_id."','".$is_ok."','".$password."');";
-//            $sql = "insert into stu values  (".$name.",".$id .",".$sex.",".$team. "," . $grade . "," . $dept . "," . $introduce_id . "," . $is_ok . "," . $password . ");";
             $rs = mysqli_query($db, $sql);
 
 
         } else {
         $sql = "insert into teacher values  ('".$name."','".$id."','".$sex."','".$team."','".$dept."','".$introduce_id."','".$is_ok."','".$password."');";
-//            $sql = "insert into teacher values  (" . $name . "," . $id . "," . $sex . "," . $team . "," . $dept . "," . $introduce_id . "," . $is_ok . "," . $password . ");";
             $rs = mysqli_query($db, $sql);
 
         }

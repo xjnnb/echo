@@ -24,7 +24,7 @@
             $flag=1;
         }
     }
-    elseif ($select == "student"){ //在学生的表中查找用户
+    else if ($select == "student"){ //在学生的表中查找用户
         $sql="SELECT * FROM students  WHERE user_name='".$user."' AND user_pwd='".$pwd."';";
 
         $result=$db->query($sql);
@@ -41,4 +41,5 @@
 //返回json数据
  echo json_encode($data);//输出json数据
 sleep(0.5);
-    ?>
+
+?>

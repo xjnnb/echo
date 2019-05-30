@@ -1,13 +1,7 @@
 <?php
-header("content-type:text/html;charset=utf-8");
-$db=@new mysqli("localhost","root","");
-if ($db->connect_error)
-    die('链接错误: '. $db->connect_error);
-$db->select_db('test') or die('不能连接数据库');
-mysqli_query($db, "set names 'utf8'");//设置数据库utf8编码
+require "connect.php";//链接数据库
 
 $arr = array();
-
 $sql = "select real_name,card_no,enter_year,class_id,mobile from students;";
 
 $rs = mysqli_query($db, $sql);

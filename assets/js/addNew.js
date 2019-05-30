@@ -81,9 +81,9 @@ $(document).ready(function () {
                 var json = JSON.parse(data);
                 console.log("DEBUG");
                 console.log(json[0].result);
-                if (json[0].result == '0') {
+                if (json[0].result === '0') {
                     alert("添加成功，即将跳转！");
-                    setTimeout(function(){ window.location.href="main.html"; }, 200);
+                    setTimeout(function(){ window.location.href="mainPage.php"; }, 200);
                 } else {
                     alert("添加失败，该学号已经被添加！");
                 }

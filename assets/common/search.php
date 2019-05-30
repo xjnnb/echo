@@ -1,5 +1,6 @@
 <?php
-header("content-type:text/html;charset=utf-8");
+require "connect.php";//链接数据库
+
 $Text = $_POST["searchText"];
 $type = $_POST["seltype"];
 $flag = $_POST["flag"];
@@ -8,15 +9,7 @@ if($Text==null&&$type !="allSearch"){
     header("location:/search.html");//直接打开该php文件，跳转到登录界面
 }
 
-
-$db=@new mysqli("localhost","root","");
-if ($db->connect_error)
-    die('链接错误: '. $db->connect_error);
-$db->select_db('test') or die('不能连接数据库');
-mysqli_query($db, "set names 'utf8'");//设置数据库utf8编码
-
 $arr = array();
-
 $tep="";
 $sou=$Text;
 $len=mb_strlen($Text,'utf-8');

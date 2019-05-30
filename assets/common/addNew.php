@@ -1,9 +1,6 @@
-
 <?php
 
-//include ("connect.php");
-
-header('Content-Type: text/html;charset=utf-8');
+require "connect.php";//链接数据库
 
 $id=$_POST["id"];
 $user_name=$_POST["user_name"];
@@ -22,22 +19,11 @@ $password=$_POST["password"];
 $notify_state=$_POST["notify_state"];
 $notify_state=substr($enter_year, 2, 2).$notify_state;
 
-$db=@new mysqli("localhost","root","");
-
-
-if ($db->connect_error)
-    die('链接错误: '. $db->connect_error);
-$db->select_db('test') or die('不能连接数据库');
-mysqli_query($db, "set names 'utf8'");//设置数据库utf8编码
-
-//Connect("","test");
-
 $flag='0';
 
 $sql="SELECT * FROM students WHERE id='".$id."';";
 $rs =mysqli_query($db,$sql);
 if(mysqli_num_rows($rs)>0)$flag='1';
-
 
 $s2=1;
 if($flag=='0'){
@@ -48,8 +34,7 @@ if($flag=='0'){
 }
 $arr = array();
 $arr[] = array("result" => $flag);
+
 echo json_encode($arr);
-
-
 
 ?>

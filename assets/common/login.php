@@ -1,4 +1,5 @@
  <?php
+    require "connect.php";//链接数据库
 
     $user = $_POST["user"];
     $pwd = $_POST["password"];
@@ -7,13 +8,6 @@
     if($user==null||$pwd==null){
         header("location:../../index.html");//直接打开该php文件，跳转到登录界面
     }
-
-    header('Content-Type: text/html;charset=utf-8');
-    $db=@new mysqli("localhost","root","123456");
-    $flag=0;
-    if ($db->connect_error)
-        die('链接错误: '. $db->connect_error);
-    $db->select_db('test') or die('不能连接数据库');
 
     if ($select == "admin"){//在管理员的表中查找用户
         $sql="SELECT * FROM admins  WHERE admin_name='".$user."' AND admin_pwd='".$pwd."';";

@@ -27,9 +27,9 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="card">
-                                <div class="card-sub" style="margin: 10px;margin-top: 15px">
+                                <div class="card-body">
                                     <ul class="breadcrumb" style="margin-bottom: 0px;">
-                                        <li><a href="../common/main.html">首页</a></li>
+                                        <li><a href="../common/mainPage.php">首页</a></li>
                                         <li class="active">新增人员</li>
                                     </ul>
                                 </div>

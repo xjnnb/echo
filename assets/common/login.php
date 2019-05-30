@@ -1,4 +1,5 @@
  <?php
+    require "connect.php";//链接数据库
 
     $user = $_POST["user"];
     $pwd = $_POST["password"];
@@ -8,7 +9,8 @@
         header("location:../../index.html");//直接打开该php文件，跳转到登录界面
     }
 
-     include "connect.php";
+
+
 
     if ($select == "admin"){//在管理员的表中查找用户
         $sql="SELECT * FROM admins  WHERE admin_name='".$user."' AND admin_pwd='".$pwd."';";

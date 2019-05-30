@@ -24,7 +24,7 @@ for($i=0;$i<$len;$i++){
 $Text=$tep;
 //echo $Text;
 if($flag==0){
-    $sql="SELECT * FROM students ";
+    $sql="SELECT * FROM students where ISSUE =1  ";
     $rs=mysqli_query($db,$sql);
 
     while($row = mysqli_fetch_array($rs)){
@@ -33,7 +33,7 @@ if($flag==0){
 }
 else if($type=="name"){
 
-    $sql="SELECT * FROM students  WHERE real_name like '%".$Text."%'";
+    $sql="SELECT * FROM students  WHERE ISSUE =1 AND real_name like '%".$Text."%'";
     $rs=mysqli_query($db,$sql);
 
     while($row = mysqli_fetch_array($rs)){
@@ -41,13 +41,13 @@ else if($type=="name"){
     }
 
 }else if($type=="year"){
-    $sql="SELECT * FROM students  WHERE enter_year= ".$sou;
+    $sql="SELECT * FROM students  WHERE ISSUE =1 AND enter_year= ".$sou;
     $rs=mysqli_query($db,$sql);
     while($row = mysqli_fetch_array($rs)){
         array_push($arr,$row);
     }
 }else {
-    $sql="SELECT * FROM students  WHERE class_id= ".$sou;
+    $sql="SELECT * FROM students  WHERE ISSUE =1 AND class_id= ".$sou;
     $rs=mysqli_query($db,$sql);
     while($row = mysqli_fetch_array($rs)){
         array_push($arr,$row);

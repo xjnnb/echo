@@ -21,9 +21,17 @@ $notify_state=substr($enter_year, 2, 2).$notify_state;
 
 $flag='0';
 
-$sql="SELECT * FROM students WHERE id='".$id."';";
+$sql="SELECT * FROM students WHERE ISSUE =1 AND id='".$id."';";
 $rs =mysqli_query($db,$sql);
 if(mysqli_num_rows($rs)>0)$flag='1';
+
+$sql="SELECT * FROM students WHERE ISSUE =0 AND id='".$id."';";
+$rs =mysqli_query($db,$sql);
+if(mysqli_num_rows($rs)>0){
+    $sql="DELETE  from students WHERE  id='".$id."';";
+    $rs =mysqli_query($db,$sql);
+}
+
 
 $s2=1;
 if($flag=='0'){

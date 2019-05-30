@@ -2,7 +2,7 @@
 require "connect.php";//链接数据库
 
 $arr = array();
-$sql = "select real_name,card_no,enter_year,class_id,mobile from students;";
+$sql = "select real_name,card_no,enter_year,class_id,mobile from students where ISSUE =1 ;";
 
 $rs = mysqli_query($db, $sql);
 while ($rows = mysqli_fetch_array($rs)) {

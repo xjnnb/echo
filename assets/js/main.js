@@ -1,13 +1,13 @@
 
 $(document).ready(function(){
-        console.log("debug");
+        //console.log("debug");
         $.post("../common/main.php",{ },function (data) {
             var html="";
             //console.log(data);
             //console.log((data.length));
             var json = JSON.parse(data);
-            console.log(json.length);
-            console.log(json);
+            //console.log(json.length);
+            //console.log(json);
             for(var i = 0 ; i<json.length;i++){
                 html+='<tr>';
                 html+="              <td>\n" +
@@ -25,10 +25,10 @@ $(document).ready(function(){
                     +"<td>"+json[i].mobile+"</td>";
                 html+='<td>\n' +
                     '                                                        <div class="form-button-action">\n' +
-                    '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary" data-original-title="Edit Task">\n' +
+                    '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-simple-primary editBtn" data-original-title="Edit Task" id="editBtn">\n' +
                     '                                                            <i class="la la-edit"></i>\n' +
                     '                                                        </button>\n' +
-                    '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-simple-danger" data-original-title="Remove">\n' +
+                    '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-simple-danger deleteBtn" data-original-title="Remove" id="deleteBtn">\n' +
                     '                                                            <i class="la la-times"></i>\n' +
                     '                                                        </button>\n' +
                     '                                                        </div>\n' +
@@ -38,4 +38,9 @@ $(document).ready(function(){
 
             $("#selectInfoTable").html(html);
         });
+
+
+        // $("#editBtn").click(function () {
+        //     window.location.href='edit.html';
+        // });
     });

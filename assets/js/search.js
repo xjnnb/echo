@@ -1,5 +1,15 @@
 
 $(document).ready(function(){
+    $.post("../common/sidebarInfo.php",{ },function (data) {
+        console.log(data);
+        var json = JSON.parse(data);
+        var imgdata="";
+        imgdata="<img src="+json[0].image+">";
+        $("#Administrator").html(json[0].real_name);
+        $("#headshot").html(imgdata);
+
+    });
+
     $.post("../common/main.php",{ },function (data) {
         var html="";
         //console.log(data);

@@ -1,14 +1,14 @@
 <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <div class="user">
-                    <div class="photo">
+                    <div class="photo" id="headshot">
                         <img src="../images/profile.jpg">
                     </div>
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                                 <span>
                                 Hello,
-                                    <span class="user-level">Administrator</span>
+                                    <span class="user-level" id="Administrator">Administrator</span>
                                     <span class="caret"></span>
                                 </span>
                         </a>

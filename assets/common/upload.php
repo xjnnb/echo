@@ -5,7 +5,7 @@ $dir_base = "./uploadImages/";     //文件上传根目录
 $output = "<textarea>";
 $index = 0;        //$_FILES 以文件name为数组下标，不适用foreach($_FILES as $index=>$file)
 foreach($_FILES as $file){
-    $upload_file_name = 'upload_file' . $index;        //对应index.html FomData中的文件命名
+    $upload_file_name = 'upload_file' . $index;        //对应FomData中的文件命名
     $filename = $_FILES[$upload_file_name]['name'];
     $gb_filename = iconv('utf-8','gb2312',$filename);    //名字转换成gb2312处理
     //文件不存在才上传

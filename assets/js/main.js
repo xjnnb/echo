@@ -1,9 +1,18 @@
 
 $(document).ready(function(){
-        //console.log("debug");
+        $.post("../common/sidebarInfo.php",{ },function (data) {
+            console.log(data);
+            var json = JSON.parse(data);
+            var imgdata="";
+            imgdata="<img src="+json[0].image+">";
+            $("#Administrator").html(json[0].real_name);
+            $("#headshot").html(imgdata);
+
+        });
+
         $.post("../common/main.php",{ },function (data) {
             var html="";
-            //console.log(data);
+            console.log(data);
             //console.log((data.length));
             var json = JSON.parse(data);
             //console.log(json.length);

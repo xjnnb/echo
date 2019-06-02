@@ -43,8 +43,6 @@ if($flag==1){
 
     $password = $_POST["password"];
     $notify_state = $_POST["notify_state"];
-    $notify_state = substr($enter_year, 2, 2) . $notify_state;
-
     $sql = "SELECT  image from students WHERE  id='" . $id . "';";
     $rs = mysqli_query($db, $sql);
     $crr=array();

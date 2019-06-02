@@ -1,4 +1,14 @@
 $(document).ready(function () {
+    $.post("../common/sidebarInfo.php",{ },function (data) {
+        console.log(data);
+        var json = JSON.parse(data);
+        var imgdata="";
+        imgdata="<img src="+json[0].image+">";
+        $("#Administrator").html(json[0].real_name);
+        $("#headshot").html(imgdata);
+
+    });
+
     //响应文件添加成功事件
     var feedback = $("#feedback");
     $("#inputfile").change(function(){
